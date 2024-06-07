@@ -1,0 +1,9 @@
+<h2>Employee List</h2>
+<ul>
+  <li *ngFor="let employee of employees">
+    {{ employee.nom }} - {{ employee.mail }} - {{ employee.telephone }}
+    <button (click)="editEmployee(employee)">Edit</button>
+    <button (click)="deleteEmployee(employee.id)">Delete</button>
+  </li>
+</ul>
+<app-update-employee *ngIf="selectedEmployee" [employee]="selectedEmployee"></app-update-employee>
